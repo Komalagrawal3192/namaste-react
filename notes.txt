@@ -1,3 +1,59 @@
 what is CDN?
 what is cross-origin?
 React element is an object, that aa browser understands.
+Package.json is a configuration for npm.
+The most important package in our project is bundler... bundling all independent files and running as once
+In our project, we will use Parcel..(just bcz it is easy to install)... all webpacks are almost same.
+
+npm i -D parcel
+what does -D? I want it as a dev dependencies
+There are 2types of dependencies we can install
+1)Dev dependencies - uesd in dev
+2)Normal dependencies - used in production also
+The tilde ~ is used when you only want bug fixes and minor improvements that won't break existing functionality within the current minor version.
+The caret ^ is used when you want to receive new features and bug fixes within the same major version, assuming they maintain backward compatibility. 
+
+difference betn package.json and package-lock.json
+package-lock.json keeps a track of every version update has has exact lataest version, but package.json keeps only minor version updates
+node modules are created contain all the database of all dependencies that we need.
+Node modules contain all the code of npm, hence it should be added to git to get smooth prod code running
+to avoid going files to git, add them in file named gitignore
+transitive dependency: parcel needs lot more packages to run.. which in return install all other libs also
+Whatever we can recreate we should never put that on git.
+do we need to push package, package.json files also to github?
+yes.. because it has all the dependency file that our project needs to run
+if u have then, u can recreate all the node modules
+
+#Parcel (parcels.org)
+Dev Build
+Localserver
+HMR (Hot Module Replacement)
+File watching Algorithm(writtten in c++)
+Caching- Faster builds
+Image Optimization as well
+Minification\
+bundling
+Compresssing
+consistent Hashing
+code Splitting
+Differential Bundling- Support older browsers
+Diagnostics
+Error Handling
+HTTPS
+Tree shaking- remove unused code
+
+Whether u should put parcel-cache and dist in github... no.. they are automatically created on build.. no need
+
+
+"start": "parcel index.html"------> used to create dev build
+"build" : "npx build index.html" ---> used to create prod build
+
+Note: If u are new to language, proj and dont know how to execute program : 
+goto package.json> scripts> here u will find the code to run
+
+so , npm start = npm run starts--> it craetes a dev build for used(parcel executes it behind the scene as we put in package.json)
+npm run build---> creates  a prod build
+
+JSX- It is NOT a HTML code inside JS, It is HTML-like/ XML-like syntax inside JS.
+In JSX, if u have to give attributes to the tag, we use camelCase.
+HomeWork: Try to explore different tags of HTML(img, p, a href) , to write JSX code

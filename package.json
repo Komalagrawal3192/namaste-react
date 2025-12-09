@@ -1,0 +1,33 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "This is React Learning by Komal Agrawal Biswas",
+  "keywords": [
+    "react"
+  ],
+  "homepage": "https://github.com/Komalagrawal3192/namaste-react#readme",
+  "bugs": {
+    "url": "https://github.com/Komalagrawal3192/namaste-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Komalagrawal3192/namaste-react.git"
+  },
+  "license": "ISC",
+  "author": "Komal Agrawal Biswas",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "browsersList":[
+    "Last 2 Chrome version"
+  ]
+}

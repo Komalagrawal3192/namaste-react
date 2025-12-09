@@ -1,34 +1,68 @@
- import React from "react";
+ import * as React from "react";
  import ReactDOM from "react-dom/client";
+ import companyLogo from './images/food.png';
 
+
+
+ const Header=()=>{
+    return(
+        <div className="header">
+            <div className="logo-container">
+                  <img className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB0QKqZOcPqTyBnFHq0Vso0rIX49-JoBVSBcwce_jXNebmWyw3HAHGBt4&s" />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About US</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+                  
+            </div>
+        </div>
+
+    );
+
+ }
+
+ const RestaurantCard=()=>{
+    return(
+        <div className="res-card" style={{backgroundColor:"#f0f0ff"}}>
+            <img className="res-logo" alt="img-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHz1oghCMfie_4AOsUF0JwofGnAItBiH-hKQ&s">
+            </img>
+        <h3>Meghna Foods</h3>
+        <h4>North Indian, Asian, Snacks</h4>
+        <h4>4.5 Rating</h4>
+        <h4>38mins</h4>
+        </div>
+    );
+ }
+ const Body=()=>{
+    return(
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="res-container">
+              <RestaurantCard /> 
+              <RestaurantCard /> 
+              <RestaurantCard /> 
+              <RestaurantCard />
+              <RestaurantCard />
+              <RestaurantCard />
+              <RestaurantCard /> 
+            </div>
+        </div>
+    )
+ }
+
+
+ const AppLayout=()=>{
+    return(
+        <div className="app">
+          <Header />
+          <Body />
+        </div>
+    )
+ }
  
- //React Element
- const heading = React.createElement(
-    "h1",
-    {id: "heading"},
-    "Namaste React"
- );
-
-//Functional Component
-
- const Title= () =>(
-    <h1 className="head" tabIndex="5">
-        Namaste React using JSX
-    </h1>
- );
-
-
- //Component Composition
- const HeadingComponent= ()=>(
- <div id="container">
-    <Title/>
-    {Title()}
-    {123455}
-    <Title></Title>
-    <h1 className="heading">Namaste React Functional Component</h1>
- </div>);
-
-
- const root= ReactDOM.createRoot(document.getElementById("root"));
- root.render(heading);
- root.render(<HeadingComponent />);
+ const root= ReactDOM.createRoot(document.getElementById("root")); 
+ root.render(<AppLayout />);

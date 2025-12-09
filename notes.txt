@@ -57,3 +57,39 @@ npm run build---> creates  a prod build
 JSX- It is NOT a HTML code inside JS, It is HTML-like/ XML-like syntax inside JS.
 In JSX, if u have to give attributes to the tag, we use camelCase.
 HomeWork: Try to explore different tags of HTML(img, p, a href) , to write JSX code
+
+
+//React.createElement => ReactElement - JS Object => HTMLElement(render)
+//JSX is transpiled before it reaches the JS by Parcel -> Babel
+ //JSX => Babel transpiles it to React.createElement => ReactElement- JSObject => HTMLElement(render)
+Class based components-  not in use
+Functional Components- new and easy way to use in React
+
+U can inject any JS inside ur {}in HMTL tag in JSX.
+We can use Element insideFunctin, Function inside elememt, element inside element... at the end its all JS...
+We can plau around
+ex:const Title= () =>(
+    <h1 className="head" tabIndex="5">
+        Namaste React using JSX
+    </h1>
+ );
+
+
+ //Component Composition
+ const HeadingComponent= ()=>(
+ <div id="container">
+    <Title/>
+    {Title()}
+    <Title></Title>
+    <h1 className="heading">Namaste React Functional Component</h1>
+ </div>);
+
+When u want to pass a dynamic data to a component then u passs it as a prop(arguments in JS)
+
+
+    Lets start making a Food Ordering App like Swiggy , Zpmato
+    So, lest create an outline..
+    Header - logo, navigation bar
+    Body- search, restaurant container- restaurant cards-img,cuisines,rating,eta,price...
+    Foooter-copyrght, address,links,  contact
+    

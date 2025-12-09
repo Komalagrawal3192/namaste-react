@@ -98,3 +98,6 @@ When u want to pass a dynamic data to a component then u passs it as a prop(argu
     Do we have seperate  website/UI for different plces.. NO.
     We have data-driven UI(Config-Driven UI)
     
+
+    key is important to be rendered with map() bcoz reacts doesnt understand thedata uniqueness.. it can re-render the whole set of data on evry new entry made
+    hence we should do this for code optimization

@@ -92,4 +92,9 @@ When u want to pass a dynamic data to a component then u passs it as a prop(argu
     Header - logo, navigation bar
     Body- search, restaurant container- restaurant cards-img,cuisines,rating,eta,price...
     Foooter-copyrght, address,links,  contact
+
+    config-driven UI
+    taking example of any food ordering app, the UI, cards, offers everything changes location-wise..
+    Do we have seperate  website/UI for different plces.. NO.
+    We have data-driven UI(Config-Driven UI)
     

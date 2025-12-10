@@ -8,7 +8,7 @@ import resList from "./utilities/mockData";
 
 
 
-const AppLayout = () => {
+const AppLayout = () => {   
   return (
     <div className="app">
       <Header />

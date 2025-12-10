@@ -7,7 +7,7 @@ import Shimmer from "./Shimmer";
 const Body = () => {
 
     //Local state variable- Super Powerful variable
-    const [ListofRestaurants, setListofRestaurants] = useState(resList);
+    const [ListofRestaurants, setListofRestaurants] = useState([]);
 
     useEffect(()=>{
           fetchData();      
@@ -21,15 +21,15 @@ const Body = () => {
         console.log(json);
 
         //Optional Chaining
-        setListofRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+        setListofRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    };
 
    
+    //Conditional Rendering
+    // if(ListofRestaurants.length === 0)
+    //     return <Shimmer />;
 
-    if(ListofRestaurants.length === 0)
-        return <Shimmer />;
-
-  return (
+  return ListofRestaurants.length === 0 ? <Shimmer />:(
     <div className="body">
       <div className="filter">
         <button className="filter-btn" onClick={()=>{   

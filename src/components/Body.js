@@ -8,6 +8,8 @@ const Body = () => {
 
     //Local state variable- Super Powerful variable
     const [ListofRestaurants, setListofRestaurants] = useState([]);
+    const [searchText, setSearchText] = useState("");
+    const [filteredRestaurant, setFilterRestaurant] = useState("");
 
     useEffect(()=>{
           fetchData();      
@@ -22,7 +24,8 @@ const Body = () => {
 
         //Optional Chaining
         setListofRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-   };
+        setFilterRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+   };       
 
    
     //Conditional Rendering
@@ -32,9 +35,21 @@ const Body = () => {
   return ListofRestaurants.length === 0 ? <Shimmer />:(
     <div className="body">
       <div className="filter">
+        <div className="search">
+            <input type="text" className="search-box" value={searchText} onChange={(e)=>{setSearchText(e.target.value)} }        />
+            <button onClick={()=>{
+                const filteredRestaurant= ListofRestaurants.filter((res)=>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())            
+           );
+         
+            setFilterRestaurant(filteredRestaurant);
+            }}
+            >Search
+            </button>
+        </div>
         <button className="filter-btn" onClick={()=>{   
             const filteredList= ListofRestaurants.filter(
-                (res) => res.info.avgRating > 4.1
+                (res) => res.info.avgRating > 4.3
             );
             setListofRestaurants(filteredList);
         }}> 
@@ -42,7 +57,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {ListofRestaurants.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>

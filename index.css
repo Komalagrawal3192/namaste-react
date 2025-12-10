@@ -35,7 +35,8 @@
 
 .res-container{
     display:flex;
-    flex:flex-wrap
+    flex-wrap: wrap;
+    
 }
 .res-logo{
     margin:5px;
@@ -44,4 +45,7 @@
 }
 .h3{
     align-self: center;
+}
+.filter-btn{
+    margin: 10px
 }

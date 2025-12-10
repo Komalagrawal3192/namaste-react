@@ -101,3 +101,19 @@ When u want to pass a dynamic data to a component then u passs it as a prop(argu
 
     key is important to be rendered with map() bcoz reacts doesnt understand thedata uniqueness.. it can re-render the whole set of data on evry new entry made
     hence we should do this for code optimization
+
+    There are two types of Export/ Import
+    -Default Export/ Import
+    export default Component;
+    import Component from./path
+
+    -NAmed Export/ Import
+    export const variable/Component
+    import {Component} from "path"
+
+  HomeWork : Can we use Default export with name export Component --I think yes, we cannot use default export twice, so its a mandate to use named export to export 2 components
+  It is a good practice to keep ur file code not more than 100line.. If exceeding, there is something wrong in the code, and we need to optimize it
+
+  Whenever a state variable changes, React will re-render the components    
+
+  Reconciliation Algorithm (React Fiber Algo) came in React 16

@@ -1,6 +1,7 @@
 {
   "name": "y",
   "version": "1.0.0",
+  "proxy": "https://www.swiggy.com",
   "description": "This is React Learning by Komal Agrawal Biswas",
   "keywords": [
     "react"

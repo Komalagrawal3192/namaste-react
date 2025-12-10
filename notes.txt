@@ -116,4 +116,26 @@ When u want to pass a dynamic data to a component then u passs it as a prop(argu
 
   Whenever a state variable changes, React will re-render the components    
 
-  Reconciliation Algorithm (React Fiber Algo) came in React 16
+  Reconciliation Algorithm (React Fiber Algo) came in React 16--->
+
+State Change: The state of your app changes because a new item is added.
+New Virtual DOM: React creates a new Virtual DOM that includes the new item.
+Diff Algorithm: The diff algorithm compares the new Virtual DOM with the old Virtual DOM.
+Identify Changes: The algorithm identifies that a new item has been added.
+Minimal Updates: React updates the actual DOM to include only the new item, rather than re-rendering the entire list.
+The process of comparing the new virtual DOM with the previous one using diff algorithm is called reconciliation.
+Benefits of Reconciliation
+Faster UI Updates
+Minimal DOM Manipulation
+Improved User Experience
+Smoother Interactions
+Responsive Applications
+Conclusion
+Reconciliation is a core concept that makes React powerful and efficient. The next time you add a new feature to your React app, remember that reconciliation is working behind the scenes to keep everything running smoothly.
+
+React ensures high performance and a better user experience by using the Virtual DOM and the diff algorithm
+
+to update only the changed elements in the real DOM efficiently.
+
+useEffect function is a callback function, and it will only be loadedonce the component is rendered.
+Shimmer UI--Shimmer is a temporary animation placeholder for when data from the service call takes time to get back and we don't want to block rendering the rest of the UI.

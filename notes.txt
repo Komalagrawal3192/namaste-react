@@ -24,6 +24,9 @@ do we need to push package, package.json files also to github?
 yes.. because it has all the dependency file that our project needs to run
 if u have then, u can recreate all the node modules
 
+
+
+
 #Parcel (parcels.org)
 Dev Build
 Localserver
@@ -139,3 +142,13 @@ to update only the changed elements in the real DOM efficiently.
 
 useEffect function is a callback function, and it will only be loadedonce the component is rendered.
 Shimmer UI--Shimmer is a temporary animation placeholder for when data from the service call takes time to get back and we don't want to block rendering the rest of the UI.
+
+Link Component is again a super power given by  React .. for routing it doesnt render the whole page.
+
+There are 2 types of Routing in webpages
+1) Client side Routing
+2) Server side Routing
+
+
+Why do we use super(props)?
+Why we cannot use sync in useEffect?

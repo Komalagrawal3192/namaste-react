@@ -21,15 +21,19 @@
     "start": "parcel index.html",
     "test": "jest"
   },
-  "devDependencies": {
-    "parcel": "^2.16.3"
-  },
   "dependencies": {
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "react-router-dom": "^7.10.1"
+    "react-router-dom": "^6.30.2"
   },
   "browsersList": [
     "Last 2 Chrome version"
-  ]
+  ],
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.3"
+  },
+  "resolutions": {
+  "@babel/preset-env": "7.13.8"
+}
 }

@@ -2,6 +2,7 @@ import resList from "../utilities/mockData";
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utilities/useOnlineStatus";
 
 
 const Body = () => {
@@ -20,17 +21,21 @@ const Body = () => {
    
         const data= await fetch(`https://proxy.corsfix.com/?${swiggyApiUrl}`);
         const json = await data.json();
-        console.log(json);
+    
 
         //Optional Chaining
         setListofRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilterRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    };       
 
-   
+        const onlineStatus = useOnlineStatus();
+        if(onlineStatus === false) return (
+        <h1>It seems u r offline</h1>
+        );
+
     //Conditional Rendering
-    // if(ListofRestaurants.length === 0)
-    //     return <Shimmer />;
+    if(ListofRestaurants.length === 0)
+        return <Shimmer />;
 
   return ListofRestaurants.length === 0 ? <Shimmer />:(
     <div className="body">

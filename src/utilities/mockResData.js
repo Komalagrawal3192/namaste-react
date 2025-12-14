@@ -1,4 +1,4 @@
-const menuData = [
+const menuItems = [
   {
     id: "114716721",
     name: "Margherita",
@@ -12110,5 +12110,10 @@ const menuData = [
     parentId: "31607330",
   },
 ];
+
+const menuData = {
+  items: [...menuItems],
+  top_picks: [...menuItems],
+};
 
 export default menuData;

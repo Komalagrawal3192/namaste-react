@@ -34,18 +34,17 @@ const RestaurantCard = (props) => {
 
 export const withDiscountLabel = (RestaurantCard) => {
   return (props) => {
-    console.log(props);
+    //console.log(props);
     return (
       <div>
-        <label
-          className="font-gilroy font-extrabold text-black/90 absolute p-4 ml-5 w-full"
-  
-        >
-          {props?.resData?.info?.aggregatedDiscountInfoV3?.header} 
-           {" "} 
-           { props?.resData?.info?.aggregatedDiscountInfoV3?.subHeader && (
-    <span> {props?.resData?.info?.aggregatedDiscountInfoV3?.subHeader}</span>
-  )}
+        <label className="font-gilroy font-extrabold text-black/90 absolute p-4 ml-5 w-full">
+          {props?.resData?.info?.aggregatedDiscountInfoV3?.header}{" "}
+          {props?.resData?.info?.aggregatedDiscountInfoV3?.subHeader && (
+            <span>
+              {" "}
+              {props?.resData?.info?.aggregatedDiscountInfoV3?.subHeader}
+            </span>
+          )}
         </label>
         <RestaurantCard {...props} />
       </div>

@@ -1,37 +1,37 @@
+import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import useRestaurantMenu from "../utilities/useRestaurantMenu";
+import { MENU_API } from "../utilities/constants";
+import RestaurantCategory from "./RestaurantCategory";
+import menuData from "../utilities/mockResData";
 
 const RestaurantMenu = () => {
-  const { resId } = useParams();
+  const [resInfo, setResInfo] = useState(null);
 
-  const resInfo = useRestaurantMenu(resId);
+  const { resId } = useParams();
+  console.log(resId);
+
+  useEffect(() => {
+    setResInfo(menuData);
+  }, []);
+
+  // const fetchMenu = async () => {
+  //   const data = await fetch(MENU_API + resId);
+  //   const json = await data.json();
+  //   setResInfo(json.data);
+  //   //console.log(json.data);
+  // };
 
   if (resInfo === null) return <Shimmer />;
 
-  const { name, cuisines, costForTwoMessage } =
-    resInfo?.cards[0]?.card?.card?.info;
-
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-
-  console.log(itemCards);
+  console.log(menuData);
 
   return (
-    <div className="menu">
-      <h1>{name}</h1>
-      <p>
-        {cuisines.join(", ")} - {costForTwoMessage}
-      </p>
-      <h2>Menu</h2>
-      <ul>
-        {itemCards.map((item) => (
-          <li key={item.card.info.id}>
-            {item.card.info.name} -{" Rs."}
-            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-          </li>
-        ))}
-      </ul>
+    <div className="text-center">
+      <h2 className="font-bold my-6 text-2xl"> {resId}</h2>
+      {/* categories accordions */}
+
+      <RestaurantCategory />
     </div>
   );
 };

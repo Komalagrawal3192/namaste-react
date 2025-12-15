@@ -1,6 +1,14 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utilities/cartSlice";
 import { CDN_URL } from "../utilities/constants";
 
 const CategorySection = ({ title, items, isOpen, onToggle }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = (item) => {
+    dispatch(addItem(item));
+  };
+
   return (
     <div>
       {/* Header */}
@@ -31,7 +39,10 @@ const CategorySection = ({ title, items, isOpen, onToggle }) => {
               </div>
 
               <div className="w-3/12 p-4 relative">
-                <button className="absolute p-1 bg-white text-black shadow-lg">
+                <button
+                  className="absolute p-1 bg-white text-black shadow-lg"
+                  onClick={() => handleClick(item)}
+                >
                   Add +
                 </button>
                 <img

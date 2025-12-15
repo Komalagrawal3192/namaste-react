@@ -5,6 +5,8 @@ import Body from "./components/Body";
 import RestaurantCard from "./components/RestaurantCard";
 import resList from "./utilities/mockData";
 import { lazy, Suspense } from "react";
+import { Provider } from "react-redux";
+import appStore from "./utilities/appStore";
 
 import {
   BrowserRouter as Router,
@@ -17,15 +19,17 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 
-const Grocery= lazy(()=>import("./components/Grocery"));
-const About= lazy(()=>import("./components/About"));
+const Grocery = lazy(() => import("./components/Grocery"));
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 
@@ -41,7 +45,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Suspense fallback={<h1>Loading...</h1>}><About /></Suspense>,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <About />
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
@@ -53,7 +61,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/grocery",
-        element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
     ],
     errorElement: <Error />,

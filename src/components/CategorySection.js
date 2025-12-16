@@ -2,7 +2,13 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../utilities/cartSlice";
 import { CDN_URL } from "../utilities/constants";
 
-const CategorySection = ({ title, items, isOpen, onToggle }) => {
+const CategorySection = ({
+  title,
+  items,
+  isOpen,
+  onToggle,
+  showAddButton = true,
+}) => {
   const dispatch = useDispatch();
 
   const handleClick = (item) => {
@@ -39,12 +45,14 @@ const CategorySection = ({ title, items, isOpen, onToggle }) => {
               </div>
 
               <div className="w-3/12 p-4 relative">
-                <button
-                  className="absolute p-1 bg-white text-black shadow-lg"
-                  onClick={() => handleClick(item)}
-                >
-                  Add +
-                </button>
+                {showAddButton && (
+                  <button
+                    className="absolute p-1 bg-white text-black shadow-lg"
+                    onClick={() => handleClick(item)}
+                  >
+                    Add +
+                  </button>
+                )}
                 <img
                   src={CDN_URL + item.imageId}
                   className="w-full"

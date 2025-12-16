@@ -7,7 +7,7 @@ import resList from "./utilities/mockData";
 import { lazy, Suspense } from "react";
 import { Provider } from "react-redux";
 import appStore from "./utilities/appStore";
-
+import Cart from "./components/Cart";
 import {
   BrowserRouter as Router,
   Route,
@@ -66,6 +66,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,
